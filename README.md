@@ -13,3 +13,15 @@ if (sortedObj1 === sortedObj2) {
 } else {
   console.log("The JSON objects are different.");
 }
+
+
+
+2.fetch('https://restcountries.com/v3.1/all')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(country => {
+      console.log(country.flags[0]);
+    });
+  })
+  .catch(error => console.error(error));
+
